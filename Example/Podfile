@@ -1,0 +1,20 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'FMHEDNet_Example' do
+  pod 'FMHEDNet', :path => '../'
+  # pod 'OpenCV', '2.4.9'
+
+  target 'FMHEDNet_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+  
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+end

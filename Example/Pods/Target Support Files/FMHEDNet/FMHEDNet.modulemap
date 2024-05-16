@@ -1,0 +1,6 @@
+framework module FMHEDNet {
+  umbrella header "FMHEDNet-umbrella.h"
+
+  export *
+  module * { export * }
+}

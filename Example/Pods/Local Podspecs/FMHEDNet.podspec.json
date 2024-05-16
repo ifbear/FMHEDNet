@@ -1,0 +1,57 @@
+{
+  "name": "FMHEDNet",
+  "version": "0.1.0",
+  "summary": "A short description of FMHEDNet.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/dexiong/FMHEDNet",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dexiong": "dexiong@staff.sina.com.cn"
+  },
+  "source": {
+    "git": "https://github.com/ifbear/FMHEDNet.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "static_framework": true,
+  "requires_arc": true,
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC -all_load",
+    "ALWAYS_SEARCH_USER_PATHS": "YES",
+    "HEADER_SEARCH_PATHS": "$(inherited) $(PROJECT_DIR)/FMHEDNet/Classes/opencv2.framework/Versions/A/Headers",
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/FMHEDNet/Classes/opencv2.framework"
+  },
+  "source_files": "FMHEDNet/Classes/**/*.{h,m,mm}",
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "ios": {
+    "vendored_libraries": "FMHEDNet/Classes/**/*.a",
+    "public_header_files": "FMHEDNet/Classes/**/*.{h}"
+  },
+  "frameworks": [
+    "Accelerate",
+    "AssetsLibrary",
+    "AVFoundation",
+    "CoreGraphics",
+    "CoreImage",
+    "CoreMedia",
+    "CoreVideo",
+    "CoreVideo",
+    "UIKit",
+    "Foundation"
+  ],
+  "libraries": [
+    "stdc++",
+    "c++"
+  ],
+  "vendored_frameworks": "FMHEDNet/Classes/opencv2.framework"
+}
